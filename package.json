@@ -12,7 +12,9 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/ava tests/index.js",
-    "codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov"
+    "codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov",
+    "tag": "node .tag add $1",
+    "tag:delete": "git tag -d $1 && git push origin --delete tag $1"
   },
   "devDependencies": {
     "ava": "^0.19.1",
