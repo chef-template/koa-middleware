@@ -1,6 +1,6 @@
 {
   "name": "chef-template",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/halojs/chef-template"
@@ -11,6 +11,8 @@
     "url": "https://github.com/halojs/chef-template/issues"
   },
   "scripts": {
+    "prepublish": "npm run compile",
+    "compile": "node_modules/.bin/babel src -d dist",
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/ava tests/index.js",
     "codecov": "./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov",
     "tag": "node .tag add $1",
